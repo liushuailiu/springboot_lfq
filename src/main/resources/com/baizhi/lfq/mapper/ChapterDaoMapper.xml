@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.lfq.dao.ChapterDao">
+    <!--根据id查专辑-->
+    <select id="selectOneChapter" parameterType="String" resultType="com.baizhi.lfq.entity.Chapter">
+        select id,title,url,size,length,times,cerateTime,albumId from chapter where albumId=#{ChapterId}
+    </select>
+    <!--添加-->
+    <insert id="insertOneChapter" parameterType="com.baizhi.lfq.entity.Chapter">
+        insert into chapter VALUES (#{id},#{title},#{url},#{size},#{length},#{times},#{cerateTime},#{albumId})
+    </insert>
+</mapper>

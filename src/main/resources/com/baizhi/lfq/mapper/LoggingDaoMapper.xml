@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.lfq.dao.LoggingDao">
+    <!--查所有日志-->
+    <select id="selectAllLogging" resultType="com.baizhi.lfq.entity.Logging">
+        select id,name,date,main,method from logging
+    </select>
+    <!--添加-->
+    <insert id="insertOneLogging" parameterType="com.baizhi.lfq.entity.Logging">
+      insert into logging values (#{id},#{name},#{date},#{main},#{method})
+    </insert>
+</mapper>
